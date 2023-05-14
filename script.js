@@ -40,11 +40,11 @@ download_btn.addEventListener("click", function () {
           JSON.parse(this.responseText).music.download_url
         );
         music_title.textContent = JSON.parse(this.responseText).music.title;
+        loading.classList.replace("d-flex", "d-none");
+        audio_container.classList.replace("d-none", "d-flex");
       }
     };
     xhr.send();
-    loading.classList.replace("d-flex", "d-none");
-    audio_container.classList.replace("d-none", "d-flex");
   } catch (err) {
     loading.classList.replace("d-flex", "d-none");
     audio_container.classList.replace("d-flex", "d-none");
